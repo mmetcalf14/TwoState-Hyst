@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D37B271B1C247CFE00E97E14 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D37B271A1C247CFE00E97E14 /* main.cpp */; };
+		D37B27231C29E88000E97E14 /* Integrate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D37B27221C29E88000E97E14 /* Integrate.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		D37B27171C247CFE00E97E14 /* TwoState-RelaxedMag */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TwoState-RelaxedMag"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37B271A1C247CFE00E97E14 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D37B27211C29E5F200E97E14 /* Integrate_Params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Integrate_Params.h; sourceTree = "<group>"; };
+		D37B27221C29E88000E97E14 /* Integrate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Integrate.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				D37B271A1C247CFE00E97E14 /* main.cpp */,
+				D37B27211C29E5F200E97E14 /* Integrate_Params.h */,
+				D37B27221C29E88000E97E14 /* Integrate.cpp */,
 			);
 			path = "TwoState-RelaxedMag";
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D37B271B1C247CFE00E97E14 /* main.cpp in Sources */,
+				D37B27231C29E88000E97E14 /* Integrate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +213,12 @@
 		D37B271F1C247CFE00E97E14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/gsl/1.16/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/gsl/1.16/lib;
+				OTHER_LDFLAGS = (
+					"-lgsl",
+					"-lgslcblas",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -214,6 +226,12 @@
 		D37B27201C247CFE00E97E14 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/gsl/1.16/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/gsl/1.16/lib;
+				OTHER_LDFLAGS = (
+					"-lgsl",
+					"-lgslcblas",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -237,6 +255,7 @@
 				D37B27201C247CFE00E97E14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
